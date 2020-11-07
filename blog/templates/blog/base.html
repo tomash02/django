@@ -1,16 +1,34 @@
-{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
 
-{% block content%}
-{% for post in posts %}
-<div class="post">
-    <div class="date">
-    <p>Data publikacji: {{ post.published_date }} </p>
-    </div>
-    <h2><a href="">{{ post.title}}</a></h2>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<body>
+<div class="page-hidder">
+    <h2><a href="">Najnowsze wpisy</a></h2>
 </div>
-{% endfor %}
-{% endblock %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% block content %}
+            {% endblock%}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
 
 
 
